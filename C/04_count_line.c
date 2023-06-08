@@ -3,15 +3,17 @@
 
 #define EOF_VAL 26
 
-main() {
-  long nc;
-  int c;
+int main() {
+  int c, nl, nb, nt;
 
-  nc = 0;
+  nl = 0;
+  nb = 0;
+  nt = 0;
   while ((c = getch()) != EOF_VAL) {
     switch (c) {
       case 13:
         putch('\n');
+        ++nl;
         break;
       case 8:
         putch('\b');
@@ -23,11 +25,21 @@ main() {
         putch('C');
         return 0;
         break;
+      case ' ':
+        putch(c);
+        ++nb;
+        break;
+      case '\t':
+        putch(c);
+        ++nt;
+        break;
       default:
         putch(c);
         break;
     }
-    ++nc;
+    // printf("(%d) ", c);
   }
-  printf("%ld\n", nc);
+  printf("Number of newlines: %d\n", nl);
+  printf("Number of blanks: %d\n", nb);
+  printf("Number of tabs: %d\n", nt);
 }

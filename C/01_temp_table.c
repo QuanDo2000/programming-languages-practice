@@ -4,7 +4,7 @@
 #define UP 300
 #define STEP 20
 
-main() {
+int main() {
   float fahr, cels;
 
   printf("Fahrenheit\tCelsius\n");

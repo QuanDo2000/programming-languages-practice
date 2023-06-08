@@ -3,31 +3,34 @@
 
 #define EOF_VAL 26
 
-main() {
-  long nc;
+int main() {
   int c;
 
-  nc = 0;
   while ((c = getch()) != EOF_VAL) {
     switch (c) {
       case 13:
         putch('\n');
         break;
       case 8:
-        putch('\b');
-        putch(' ');
-        putch('\b');
+        putch('\\');
+        putch('b');
         break;
       case 3:
         putch('^');
         putch('C');
         return 0;
         break;
+      case 9:
+        putch('\\');
+        putch('t');
+        break;
+      case '\\':
+        putch('\\');
+        putch('\\');
+        break;
       default:
         putch(c);
         break;
     }
-    ++nc;
   }
-  printf("%ld\n", nc);
 }

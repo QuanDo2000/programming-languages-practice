@@ -3,13 +3,12 @@
 
 #define EOF_VAL 26
 
-main() {
-  long nc;
-  int c;
+int main() {
+  int curr, last;
 
-  nc = 0;
-  while ((c = getch()) != EOF_VAL) {
-    switch (c) {
+  last = 0;
+  while ((curr = getch()) != EOF_VAL) {
+    switch (curr) {
       case 13:
         putch('\n');
         break;
@@ -23,11 +22,15 @@ main() {
         putch('C');
         return 0;
         break;
+      case ' ':
+        if (last != ' ') {
+          putchar(curr);
+        }
+        break;
       default:
-        putch(c);
+        putch(curr);
         break;
     }
-    ++nc;
+    last = curr;
   }
-  printf("%ld\n", nc);
 }
