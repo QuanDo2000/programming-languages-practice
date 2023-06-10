@@ -31,9 +31,10 @@ int getline(char s[], int lim) {
   s[i] = '\0';
 
   if (c != EOF && c != '\n') {
-    s[i - 1] = '.';
+    s[i - 1] = '\n';
     s[i - 2] = '.';
     s[i - 3] = '.';
+    s[i - 4] = '.';
     while ((c = getchar()) != EOF && c != '\n') {
       ++i;
     }

@@ -1,23 +1,18 @@
 #include <stdio.h>
 
 #define MAXLINE 1000
+#define TABINC 8
 
 int getline(char line[], int maxline);
-void copy(char to[], char from[]);
+void detab(char line[], int len);
 
 int main() {
-  int len, max;
-  char line[MAXLINE], longest[MAXLINE];
+  int len;
+  char line[MAXLINE];
 
-  max = 0;
   while ((len = getline(line, MAXLINE)) > 0) {
-    if (len > max) {
-      max = len;
-      copy(longest, line);
-    }
-  }
-  if (max > 0) {
-    printf("Longest line (%d characters):\n%s", max, longest);
+    detab(line, len);
+    printf("%s", line);
   }
   return 0;
 }
@@ -47,11 +42,24 @@ int getline(char s[], int lim) {
   return i;
 }
 
-void copy(char to[], char from[]) {
-  int i;
+void detab(char s[], int len) {
+  int i, j, k, n;
+  char temp[MAXLINE];
 
-  i = 0;
-  while ((to[i] = from[i]) != '\0') {
-    ++i;
+  for (i = 0, j = 0; i < len; ++i, ++j) {
+    if (s[i] == '\t') {
+      n = TABINC - (j % TABINC);
+      for (k = 0; k < n; ++k) {
+        temp[j + k] = ' ';
+      }
+      j = j + k - 1;
+    } else {
+      temp[j] = s[i];
+    }
+  }
+  temp[j] = '\0';
+
+  for (i = 0; (s[i] = temp[i]) != '\0'; ++i) {
+    ;
   }
 }
