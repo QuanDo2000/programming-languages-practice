@@ -8,9 +8,9 @@ void entab(char line[], int len);
 
 int main() {
   int len;
-  char line[MAXLINE];
+  char line[MAXCHAR];
 
-  while ((len = getline(line, MAXLINE)) > 0) {
+  while ((len = getline(line, MAXCHAR)) > 0) {
     entab(line, len);
     printf("%s", line);
   }
@@ -44,7 +44,7 @@ int getline(char s[], int lim) {
 
 void entab(char s[], int len) {
   int i, j, k, n, space_count;
-  char temp[MAXLINE];
+  char temp[MAXCHAR];
 
   for (i = 0, j = 0; i < len; ++i, ++j) {
     if (s[i] == ' ') {

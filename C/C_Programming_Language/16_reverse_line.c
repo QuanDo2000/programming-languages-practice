@@ -7,9 +7,9 @@ void reverse(char line[], int len);
 
 int main() {
   int len;
-  char line[MAXLINE];
+  char line[MAXCHAR];
 
-  while ((len = getline(line, MAXLINE)) > 0) {
+  while ((len = getline(line, MAXCHAR)) > 0) {
     reverse(line, len);
     printf("%s", line);
   }

@@ -4,15 +4,15 @@
 #define MAXLEN 80
 
 int getline(char line[], int maxline);
-void PrintFoldedLine(char line[], int len);
+void print_folded_line(char line[], int len);
 
 int main() {
   int len;
-  char line[MAXLINE];
+  char line[MAXCHAR];
 
-  while ((len = getline(line, MAXLINE)) > 0) {
+  while ((len = getline(line, MAXCHAR)) > 0) {
     if (len > MAXLEN) {
-      PrintFoldedLine(line, len);
+      print_folded_line(line, len);
     } else {
       printf("%s", line);
     }
@@ -45,13 +45,13 @@ int getline(char s[], int lim) {
   return i;
 }
 
-void PrintFoldedLine(char s[], int len) {
+void print_folded_line(char s[], int len) {
   int i, j, last_blank;
   char temp[MAXLEN + 2];
 
   i = j = 0;
   last_blank = 0;
-  while (i < len && i < MAXLINE) {
+  while (i < len && i < MAXCHAR) {
     // printf("i = %d, j = %d, s[i] = %c, last_blank = %d\n", i, j, s[i], last_blank);
     if (s[i] == ' ') {
       last_blank = i;

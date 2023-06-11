@@ -3,14 +3,14 @@
 #define MAXLINE 1000
 
 int getline(char line[], int maxline);
-int RemoveTrailingBlank(char line[], int len);
+int remove_trailing_blank(char line[], int len);
 
 int main() {
   int len;
-  char line[MAXLINE];
+  char line[MAXCHAR];
 
-  while ((len = getline(line, MAXLINE)) > 0) {
-    len = RemoveTrailingBlank(line, len);
+  while ((len = getline(line, MAXCHAR)) > 0) {
+    len = remove_trailing_blank(line, len);
     if (len > 0) {
       printf("%s", line);
     }
@@ -43,7 +43,7 @@ int getline(char s[], int lim) {
   return i;
 }
 
-int RemoveTrailingBlank(char s[], int len) {
+int remove_trailing_blank(char s[], int len) {
   int i;
 
   for (i = len - 2; i >= 0 && (s[i] == ' ' || s[i] == '\t'); --i) {
