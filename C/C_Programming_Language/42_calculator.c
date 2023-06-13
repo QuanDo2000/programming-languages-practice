@@ -36,8 +36,6 @@ int main() {
     var[i] = 0.0;
   }
 
-  // Ex4.10: getline
-
   while ((type = getop(s)) != EOF) {
     switch (type) {
       case NUMBER:
@@ -130,6 +128,11 @@ double pop(void) {
   }
 }
 
+/**
+ * Ex4.10: The getop will need to be changed to use line from getline.
+ * The while loop in main will also be changed to read getline then use
+ * getop on the line.
+ **/
 /* getop: get next character or numeric operand */
 int getop(char s[]) {
   int i, c;
