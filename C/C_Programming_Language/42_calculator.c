@@ -135,6 +135,7 @@ double pop(void) {
  **/
 /* getop: get next character or numeric operand */
 int getop(char s[]) {
+  // static char buf[BUFSIZE];  // This can be used to implement Ex4.11
   int i, c;
   while ((s[0] = c = getch()) == ' ' || c == '\t')
     ;
