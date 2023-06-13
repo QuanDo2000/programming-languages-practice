@@ -8,9 +8,9 @@ void print_folded_line(char line[], int len);
 
 int main() {
   int len;
-  char line[MAXCHAR];
+  char line[MAXLINE];
 
-  while ((len = getline(line, MAXCHAR)) > 0) {
+  while ((len = getline(line, MAXLINE)) > 0) {
     if (len > MAXLEN) {
       print_folded_line(line, len);
     } else {
@@ -51,7 +51,7 @@ void print_folded_line(char s[], int len) {
 
   i = j = 0;
   last_blank = 0;
-  while (i < len && i < MAXCHAR) {
+  while (i < len && i < MAXLINE) {
     // printf("i = %d, j = %d, s[i] = %c, last_blank = %d\n", i, j, s[i], last_blank);
     if (s[i] == ' ') {
       last_blank = i;

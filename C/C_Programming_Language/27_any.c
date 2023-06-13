@@ -6,12 +6,12 @@ int getline(char s[], int lim);
 int any(char s1[], char s2[]);
 
 int main() {
-  char s1[MAXCHAR], s2[MAXCHAR];
+  char s1[MAXLINE], s2[MAXLINE];
 
   printf("Enter string 1: ");
-  getline(s1, MAXCHAR);
+  getline(s1, MAXLINE);
   printf("Enter string 2: ");
-  getline(s2, MAXCHAR);
+  getline(s2, MAXLINE);
 
   printf("Result: %d\n", any(s1, s2));
   return 0;

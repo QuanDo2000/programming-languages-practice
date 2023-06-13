@@ -3,8 +3,8 @@
 #define MAXLINE 1000
 
 int max;
-char line[MAXCHAR];
-char longest[MAXCHAR];
+char line[MAXLINE];
+char longest[MAXLINE];
 
 int getline(void);
 void copy(void);
@@ -31,7 +31,7 @@ int getline(void) {
   int c, i;
   extern char line[];
 
-  for (i = 0; i < MAXCHAR - 1 && (c = getchar()) != EOF && c != '\n'; ++i) {
+  for (i = 0; i < MAXLINE - 1 && (c = getchar()) != EOF && c != '\n'; ++i) {
     line[i] = c;
   }
 

@@ -8,9 +8,9 @@ void detab(char line[], int len);
 
 int main() {
   int len;
-  char line[MAXCHAR];
+  char line[MAXLINE];
 
-  while ((len = getline(line, MAXCHAR)) > 0) {
+  while ((len = getline(line, MAXLINE)) > 0) {
     detab(line, len);
     printf("%s", line);
   }
@@ -44,7 +44,7 @@ int getline(char s[], int lim) {
 
 void detab(char s[], int len) {
   int i, j, k, n;
-  char temp[MAXCHAR];
+  char temp[MAXLINE];
 
   for (i = 0, j = 0; i < len; ++i, ++j) {
     if (s[i] == '\t') {

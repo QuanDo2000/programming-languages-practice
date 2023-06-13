@@ -7,8 +7,8 @@ int getline(char s[], int lim);
 int htoi(char s[]);
 
 int main() {
-  char s[MAXCHAR];
-  getline(s, MAXCHAR);
+  char s[MAXLINE];
+  getline(s, MAXLINE);
   printf("%d\n", htoi(s));
   return 0;
 }

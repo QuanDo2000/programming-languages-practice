@@ -7,9 +7,9 @@ int getline(char line[], int maxline);
 
 int main() {
   int len;
-  char line[MAXCHAR];
+  char line[MAXLINE];
 
-  while ((len = getline(line, MAXCHAR)) > 0) {
+  while ((len = getline(line, MAXLINE)) > 0) {
     if (len > MINLINE) {
       printf("%s", line);
     }

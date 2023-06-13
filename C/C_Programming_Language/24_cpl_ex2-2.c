@@ -4,9 +4,9 @@
 
 int main() {
   int c, i, lim;
-  char s[MAXCHAR];
+  char s[MAXLINE];
 
-  lim = MAXCHAR;
+  lim = MAXLINE;
   for (i = 0; i < lim - 1; ++i) {
     if ((c = getchar()) == '\n') {
       break;
