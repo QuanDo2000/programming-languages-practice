@@ -1,5 +1,8 @@
 {
   "code-runner.executorMap": {
-    "c": "cd $dir && gcc $fileName -o .\\bin\\$fileNameWithoutExt && .\\bin\\$fileNameWithoutExt"
+    // Windows Powershell version
+    "c": "cd $dir && gcc -DGLOB_ON=0 $fileName -o .\\bin\\$fileNameWithoutExt && .\\bin\\$fileNameWithoutExt"
+    // MSYS2 bash version
+    // "c": "cd $dirWithoutTrailingSlash && gcc $fileName -o ./bin/$fileNameWithoutExt && ./bin/$fileNameWithoutExt"
   }
 }
